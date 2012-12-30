@@ -1,7 +1,7 @@
 require "enumerator"
 
 module SettingsEnvLoader
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   # Merges ENV and modify the hash directly
   def merge_env(prefix = nil, separator = '_')
@@ -10,10 +10,13 @@ module SettingsEnvLoader
   end
 
   # Iterates the Hash as ENV key value pairs
-  def each_env(prefix = nil, separator = '_')
-    Enumerator.new do |y|
+  def each_env(prefix = nil, separator = '_', &block)
+    enumerator = Enumerator.new do |y|
       Exporter.new(prefix, separator, self).each(y)
     end
+
+    enumerator(block) if block
+    enumerator
   end
 
   class Merger
