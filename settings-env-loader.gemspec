@@ -5,7 +5,7 @@ require 'settings-env-loader'
 
 Gem::Specification.new do |gem|
   gem.name          = "settings-env-loader"
-  gem.version       = Settings::Env::Loader::VERSION
+  gem.version       = SettingsEnvLoader::VERSION
   gem.authors       = ["Ian Yang"]
   gem.email         = ["me@iany.me"]
   gem.description   = %q{Scan ENV and override correspondong settings in a nested Hash}

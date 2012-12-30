@@ -1,6 +1,6 @@
 require 'settings-env-loader'
 
-describe Settings::Env::Loader do
+describe SettingsEnvLoader do
   let(:hash) do
     {
       :float => 1.2,
@@ -16,7 +16,7 @@ describe Settings::Env::Loader do
   subject { hash }
 
   before do
-    hash.extend Settings::Env::Loader
+    hash.extend SettingsEnvLoader
   end
 
   before do
