@@ -1,7 +1,7 @@
 require "enumerator"
 
 module SettingsEnvLoader
-  VERSION = "0.0.1"
+  VERSION = "0.1.0"
 
   # Merges ENV and modify the hash directly
   def merge_env(prefix = nil, separator = '_')
