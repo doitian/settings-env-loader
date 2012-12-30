@@ -1,6 +1,10 @@
 # Settings::Env::Loader
 
-TODO: Write a gem description
+Scan ENV and override correspondong settings in a nested Hash
+
+The Hash must provide all configuration options. It eases the deployment to platform such as heroku.
+
+It is recommended to use settingslogic to load settings first, and then merge ENV into it.
 
 ## Installation
 
@@ -18,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Extend hash object:
+
+    hash.extend SettingsEnvLoader
+
+Call `merge_env`
+
+    hash.merge_env
+
+Use `each_env` to export all configuratable options:
+
+    hash.each_env do |k, v|
+      puts "export #{k}=#{v.inspect}"
+    end
 
 ## Contributing
 
